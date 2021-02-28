@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="header"><h1>This is my Own Onclick slider</h1></div>
+    <div class="position">
+    <button class="btn1" onclick="prev()"> << </button>
+    <img src="image/pic11.png" alt="">
+    <button class="btn2" onclick="next()">>></button>
+    </div>
+    
+    <script>
+        var photos = ["image/pic11.png","image/pic22.png","image/pic1.png","image/pic2.png","image/pic3.png","image/pic4.png","image/pic5.png","image/pic6.png","image/pic7.png","image/pic8.png"];
+        var picture = document.querySelector("img");
+        
+        var count = 0; 
+        function next(){
+            count++;
+            picture.src = photos[count];
+            if(count>=photos.length){
+                count = 0;
+                picture.src = photos[count];
+            }
+        }
+        
+        function prev(){
+            count--;
+            picture.src = photos[count];
+            if(count<0){
+                count = photos.length-1;
+                picture.src = photos[count];
+            }
+        }
+    </script>
+</body>
+</html>
